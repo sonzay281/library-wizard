@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-size: 16px;
+    color: #3d3d3d;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@for $i from 1 through 3 {
+    .p-#{$i} {
+        padding: $i * 10px;
+    }
+    .m-#{$i} {
+        margin: $i * 10px;
+    }
+    .px-#{$i} {
+        padding-left: $i * 10px !important;
+        padding-right: $i * 10px !important;
+    }
+    .py-#{$i} {
+        padding-top: $i * 10px !important;
+        padding-bottom: $i * 10px !important;
+    }
+    .mx-#{$i} {
+        margin-left: $i * 10px !important;
+        margin-right: $i * 10px !important;
+    }
+    .my-#{$i} {
+        margin-top: $i * 10px !important;
+        margin-bottom: $i * 10px !important;
+    }
+    .pr-#{$i} {
+        padding-right: $i * 10px;
+    }
+    .pl-#{$i} {
+        padding-left: $i * 10px;
+    }
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+        margin: 10px 12px;
+        padding: 10px 20px;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #707070;
+
+        &.active {
+            border: none;
+            background-color: #707070;
+            border: 2px solid #707070;
+            color: #fff;
+        }
+        &.btn-lg {
+            padding: 15px 30px;
+        }
+    }
+    .chevron-left {
+        &:before {
+            content: "\2039";
+            font-size: 25px;
+            line-height: 15px;
+            margin: 0 20px;
+        }
+    }
+    .app-container {
+        width: 50vw;
+        border-radius: 10px;
+        border: 2px solid #cfcfcf;
+        box-shadow: #cfcfcf 0px 0px 5px 1px;
+        main {
+            margin-top: 5px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .form-control {
+        width: 100%;
+        align-items: center;
+        margin: 10px auto;
+
+        justify-content: flex-start;
+        display: flex;
+        &.d-block {
+            display: block;
+        }
+    }
+    label {
+        color: #707070;
+        display: block;
+    }
+    button:disabled,
+    button[disabled] {
+        cursor: not-allowed;
+    }
+    input,
+    textarea {
+        padding: 10px 15px;
+        border-radius: 10px;
+        width: inherit;
+        &[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    }
+    .error {
+        color: #ff0000;
+    }
+}
