@@ -106,15 +106,15 @@ const App = () => {
 
   const onSubmit = async (_) => {
     setSubmitting(true);
-    const { addingNewSubGenre, subgenre, ...bookDetail } = form;
+    const { addingNewSubGenre,...bookDetail } = form;
     if (addingNewSubGenre) {
       await new Promise((resolve) => {
         setTimeout(() => {
-          console.log("Posting Subgenre Data", subgenre);
+          console.log("Posting Subgenre Data", bookDetail?.subgenre);
           // Random id for subgenre api response
           const id = Math.floor(Math.random() * (100 - 20)) + 20;
           const genreDetail = getGenreDetail(form?.genre);
-          const responseData = { ...subgenre, id };
+          const responseData = { ...bookDetail?.subgenre, id };
 
           genreDetail["subgenres"] = [...genreDetail?.subgenres, responseData];
 
