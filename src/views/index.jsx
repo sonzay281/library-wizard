@@ -106,9 +106,8 @@ const App = () => {
 
   const onSubmit = async (_) => {
     setSubmitting(true);
-    const { subgenre } = form;
-    let bookDetail = { ...form };
-    if (typeof subgenre === "object") {
+    const { addingNewSubGenre, subgenre, ...bookDetail } = form;
+    if (addingNewSubGenre) {
       await new Promise((resolve) => {
         setTimeout(() => {
           console.log("Posting Subgenre Data", subgenre);
@@ -158,7 +157,7 @@ const App = () => {
         <ConfirmationPage handleCreateNew={handleCreateNew} />
       ) : (
         <>
-        <div className="my-2">Add book - New book</div>
+          <div className="my-2">Add book - New book</div>
           <form onSubmit={handleSubmit}>
             <Stepper
               steps={
